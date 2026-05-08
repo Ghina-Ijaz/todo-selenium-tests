@@ -17,20 +17,14 @@ pipeline {
                 sleep(time: 20, unit: 'SECONDS')
             }
         }
-stage('Install Dependencies') {
+
+        stage('Install Dependencies') {
     steps {
         sh '''
             python3 -m pip install selenium pytest --break-system-packages
         '''
     }
 }
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                    pip3 install selenium pytest --break-system-packages
-                '''
-            }
-        }
 
         stage('Run Selenium Tests') {
             steps {
