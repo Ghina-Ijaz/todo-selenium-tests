@@ -17,9 +17,9 @@ def driver():
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
-    options.binary_location = "/usr/bin/chromium-browser"
-
-    service = Service("/usr/bin/chromedriver")
+    options.binary_location = "/usr/bin/google-chrome"
+    
+    service = Service("/usr/local/bin/chromedriver")
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(10)
     yield driver
