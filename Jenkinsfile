@@ -20,7 +20,6 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'Installing Python dependencies...'
                 sh '''
                     pip3 install selenium pytest --break-system-packages
                 '''
@@ -29,7 +28,6 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                echo 'Running Selenium tests...'
                 sh '''
                     mkdir -p test-results
                     pytest tests/test_todo_app.py -v \
