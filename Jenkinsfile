@@ -26,15 +26,15 @@ pipeline {
     }
 }
 
-        stage('Run Selenium Tests') {
-            steps {
-                sh '''
-                    mkdir -p test-results
-                    pytest tests/test_todo_app.py -v \
-                        --junit-xml=test-results/results.xml || true
-                '''
-            }
-        }
+  stage('Run Selenium Tests') {
+    steps {
+        sh '''
+            mkdir -p test-results
+            python3 -m pytest tests/test_todo_app.py -v \
+                --junit-xml=test-results/results.xml || true
+        '''
+    }
+}
 
         stage('Publish Results') {
             steps {
