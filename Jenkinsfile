@@ -54,7 +54,7 @@ pipeline {
                     <p>Todo App Selenium Tests completed.</p>
                     <p>See: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                 """,
-                to: 'hamadkhan10052005@gmail.com',
+                to: 'qasimalik@gmail.com',
                 mimeType: 'text/html'
             )
         }
